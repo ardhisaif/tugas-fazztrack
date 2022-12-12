@@ -13,13 +13,13 @@ const biodata = {
             name: "SDN 1 Gresik",
             yearIn: 2009,
             yearOut: 2015,
-            major: ""
+            major: null
         },
         {
             name: "SMPN 1 Gresik",
             yearIn: 2015,
             yearOut: 2019,
-            major: ""
+            major: null
         },
         {
             name: "SMAN 1 Gresik",
