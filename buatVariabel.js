@@ -62,3 +62,5 @@ const biodata = {
     ],
     interestInCode: true
 }
+
+console.log(biodata);
