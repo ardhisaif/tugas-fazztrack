@@ -1,16 +1,18 @@
 const models = {}
 const db = require('../database/connection')
 
-models.getAll = ({limit, offset}) => {
-    return new Promise((resolve, reject) => {
-        db.query(`SELECT * FROM movie LIMIT $1 OFFSET $2`, [limit, offset])
-            .then((res) => {
-                resolve(res.rows)
-            })
-            .catch((err) => {
-                reject(err)
-            })
-    })
+models.getAll = async ({limit, offset, filter}) => {
+    try {
+        // const query = `SELECT * FROM movie ORDER BY ${filter} LIMIT ${limit} OFFSET ${offset}`
+        // console.log(query);
+        const res = await db.query(`SELECT * FROM movie ORDER BY movie_id LIMIT $1 OFFSET $2`, [limit, offset]) //belum bisa memasukkan filter
+        console.log(filter);
+        console.log(limit);
+        console.log(offset);
+        return res.rows
+    } catch (err) {
+        throw err
+    }
 }
 
 models.getByName = ({name, limit, offset}) => {

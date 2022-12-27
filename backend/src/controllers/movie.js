@@ -4,9 +4,12 @@ const response = require('../lib/response')
 
 controllers.getData = async (req, res) => {
     try {
-        const {limit, offset} = req.query 
-        const result = await models.getAll({limit, offset})
-        const page = Number(offset) + 1
+        const {limit} = req.query || 4
+        const {page} = req.query || 1
+        const filter = "name"
+        console.log(filter);
+        const offset = (page - 1) * 4
+        const result = await models.getAll({filter, limit, offset})
         const meta = {page}
         return response(res, 200, result, meta)
     } catch (error) {
