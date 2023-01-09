@@ -1,7 +1,7 @@
 const mtk = 83
 const bahasaIndonesia = 90
 const bahasaInggris = 89
-const ipa = 100
+const ipa = "null"
 
 const hitungUN = (...nilaiUN) => {
     let average = 0
@@ -11,7 +11,7 @@ const hitungUN = (...nilaiUN) => {
             return "input harus berupa angka"
         }
 
-        if (!nilai){
+        if (nilai === null){
             return "semua nilai harus diisi terlebih dahulu"
         }
         average += nilai

@@ -1,4 +1,4 @@
-const arr = [2, 25, 4, 14, 17, 30, 8]
+// const arr = [2, 25, 4, 14, 17, 30, 8]
 
 const SeleksiNilai = (nilaiAwal, nilaiAkhir, dataArray )=> {
     if (nilaiAwal >= nilaiAkhir) {

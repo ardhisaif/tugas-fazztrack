@@ -8,9 +8,10 @@ const nameList = [
 
 const searchName = (text, maxWord, callback)=> {
     let arr = []
+    let lowerText = text.toLocaleLowerCase()
     for (let i = 0; i < nameList.length; i++) {
         const name = nameList[i].toLocaleLowerCase()
-        const isName = callback(name, text)
+        const isName = callback(name, lowerText)
         if (isName) {
             arr.push(nameList[i])
         }
@@ -27,7 +28,7 @@ const checkName = (nama, input)=> {
         for (let j = 0; j < input.length; j++) {
 
             if (nama[i + j] === input[j]) {
-            string += input[j]
+                string += input[j]
             }
 
             if (string.length === input.length) {
@@ -38,11 +39,11 @@ const checkName = (nama, input)=> {
     return false
 }
 
-console.log(searchName("an", 3, checkName));
+console.log(searchName("An", 2, checkName));
 console.log(searchName("al", 2, checkName));
-console.log(searchName("ell", 3, checkName));
+console.log(searchName("el", 3, checkName));
 console.log(searchName("carol", 3, checkName));
-console.log(searchName("caroli", 3, checkName));
+console.log(searchName("caroline", 3, checkName));
 
 
 
